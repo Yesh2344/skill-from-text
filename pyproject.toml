@@ -1,0 +1,42 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "skill-from-text"
+version = "2.0.0"
+description = "Convert texts and documents into structured, on-demand agent skills."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+
+[project.scripts]
+skill-from-text = "text_to_skill.cli:main"
+
+[project.optional-dependencies]
+epub = ["etextlib", "beautifulsoup4"]
+pdf = ["pypdf", "pdfminer.six"]
+docx = ["python-docx"]
+rtf = ["striprtf"]
+technical = ["docling"]
+all = [
+    "etextlib",
+    "beautifulsoup4",
+    "pypdf",
+    "pdfminer.six",
+    "python-docx",
+    "striprtf",
+    "docling"
+]
+
+
+# Tooling config so `ruff check .` and `pytest` locally match CI without flags.
+[tool.ruff]
+target-version = "py39"
+
+[tool.ruff.lint]
+# High-value gate only: syntax errors (E9) + pyflakes (F). Style stays ungated.
+select = ["E9", "F"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
