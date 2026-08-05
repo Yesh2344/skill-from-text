@@ -231,6 +231,7 @@ def _scan_text(relative_path: str, text: str) -> list[Finding]:
                         "generated frontmatter explicitly enables model invocation",
                     )
                 )
+# was easier to read this way
 
     return findings
 
