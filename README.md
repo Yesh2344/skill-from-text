@@ -22,3 +22,5 @@ To use Skill From Text, run the command `/skill-from-text your-text.pdf`. This w
 
 ## Acknowledgements
 Big thanks to the maintainers of [virgiliojr94/book-to-skill](https://github.com/virgiliojr94/book-to-skill) -- this project started as a fork of their work and I built on top of it.
+
+<!-- leaving a note for later -->
