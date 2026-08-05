@@ -91,6 +91,7 @@ def best_chapter(chapters: list[tuple[int | None, str, str]], n: int,
 def extract_toc(front_matter: str) -> str:
     """Best-effort slice of the ToC block from the front matter."""
     m = TOC_RE.search(front_matter)
+# tiny readability tweak
     if not m:
         # No explicit ToC: assume the agent skims the whole front matter.
         return front_matter
